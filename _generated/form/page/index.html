@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Node.JS Email application</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var from,to,subject,text;
+            $("#send_email").click(function(){
+                to=$("#to").val();
+                subject=$("#subject").val();
+                text=$("#content").val();
+                $("#message").text("Спасибо, Ваша заявка отправлена!");
+                $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+                    if(data=="sent")
+                    {
+                        $("#message").empty().html("");
+                    }
+
+                });
+            });
+        });
+    </script>
+    <style>
+        #container
+        {
+            margin-left:400px;
+            margin-top:50px;
+        }
+        #to,#subject,#content
+        {
+            font-family: "Segoe UI";
+            font-size:18px;
+            width:530px;
+        }
+        h1
+        {
+            font-family: "Segoe UI";
+            font-size:40px;
+            color: #3b5998;
+        }
+        p
+        {
+            color:green;
+        }
+        #send_email
+        {
+            font-size:15px;
+            font-family: "Segoe UI";
+        }
+        #message
+        {
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>Пример формы</h1>
+    <input type="text" id="to" placeholder="ФИО"><br>
+    <input type="text" id="subject" placeholder="Данные"><br>
+    <textarea id="content" rows="1" cols="20" placeholder="Данные"></textarea><br>
+    <button id="send_email">Отправить</button><br>
+    <span id="message"></span>
+</div>
+</body>
+</html>
