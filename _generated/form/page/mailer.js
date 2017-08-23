@@ -30,7 +30,7 @@ app.get('/',function(req,res){
 });
 app.get('/send',function(req,res){
 	var mailOptions={
-		to : 'first@gmail.com, second@yandex.ua',
+		to : 'first@gmail.com, second@yandex.ua, third@mail.com',
 		subject : req.query.subject,
 		text : req.query.text,
 		html: req.query.subject+"<b>Hello  </b>" // html body
