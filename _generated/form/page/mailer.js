@@ -22,6 +22,7 @@ var smtpTransport = nodemailer.createTransport({
 
 
 /*------------------SMTP Over-----------------------------*/
+//
 
 /*------------------Routing Started ------------------------*/
 
@@ -30,7 +31,7 @@ app.get('/',function(req,res){
 });
 app.get('/send',function(req,res){
 	var mailOptions={
-		to : 'nikolaykochura92@gmail.com, second@yandex.ua, third@mail.com',
+		to : 'nikolaykochura92@gmail.com, third@mail.com',
 		subject : 'Сообщение из сайта',
 		text : req.query.text,
 		html:"<span>Имя:  </span>" + req.query.firstName + "<br>" +

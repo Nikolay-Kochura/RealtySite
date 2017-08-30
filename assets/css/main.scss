@@ -1,4 +1,97 @@
+.bldesc {
+  margin-left: -10px;
+  /*background: #466ecd;*/
+  padding: 40px;
+  color: #e8ce0e;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+.bldesc:before, .bldesc:after {
+  font-size: 25px;
+  color: #e8ce0e;
+  position: absolute;
+  height: 2px;
+  left: 40px;
+  right: 40px;
+  line-height: .5;
+  background: linear-gradient(to right, #e8ce0e 100%, transparent 100%, transparent), linear-gradient(to right, transparent, transparent 55%, #e8ce0e 55%);
+  font-family: serif;
+}
+.bldesc:before {
+  content: "";
+  top: 30px;
+}
+.bldesc:after {
+  content: "";
+  bottom: 30px;
+}
+.bldesc p {
+  font-size: 20px;
+}
+.bldesc footer {
+  margin-bottom: 1em;
+}
+.bldesc cite {
+  font-style: oblique;
+}
+.desc{
+  color: black;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
 
+
+.clients-area {
+  padding: 60px;
+}
+#ww{
+  color: black;
+}
+.todo{
+  text-align: justify;
+}
+
+.todo1{
+  text-align: justify;
+  color: black;
+}
+
+.clients-comments {
+  /*background-image: url("../images/image_bg.png");*/
+  background-position: center 118px;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
+.clients-comments img {
+  background:#DDDDDD;
+  border: 1px solid #DDDDDD;
+  height: 182px;
+  padding: 3px;
+  width: 182px;
+  transition: all 0.9s ease 0s;
+  -moz-transition: all 0.9s ease 0s;
+  -webkit-transition: all 0.9s ease 0s;
+  -o-transition: all 0.9s ease 0s;
+}
+
+.clients-comments h3 {
+  margin-top: 55px;
+  font-weight: 300;
+  padding: 0 40px;
+}
+
+.clients-comments h4 {
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+
+.clients-comments  h4  span {
+  font-weight: 700;
+  font-style: oblique;
+}
 
 /* ==========================================================================
    Global styles
