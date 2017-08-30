@@ -1,3 +1,6 @@
+.empl{
+  color: whitesmoke;
+}
 .bldesc {
   margin-left: -10px;
   /*background: #466ecd;*/
@@ -98,6 +101,10 @@
    ========================================================================== */
 h1, h2, h3, h4, h5, h6, p, .btn, .navbar-nav a, .form-control, .list-inline, small, #pricing {
   font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  overflow-x: hidden;
 }
 
 p, .lead {
@@ -622,7 +629,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 15px;
   color: #929496;
   background: #ffffff;
 }
