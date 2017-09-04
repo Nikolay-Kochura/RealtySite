@@ -22,14 +22,13 @@
   margin-left: -10px;
   /*background: #466ecd;*/
   padding: 40px;
-  color: #e8ce0e;
   position: relative;
   font-family: 'Lato', sans-serif;
-  text-align: center;
+  //text-align: center;
 }
 .bldesc:before, .bldesc:after {
   font-size: 25px;
-  color: #e8ce0e;
+  //color: #e8ce0e;
   position: absolute;
   height: 2px;
   left: 40px;
@@ -46,23 +45,37 @@
   content: "";
   bottom: 30px;
 }
-.bldesc p {
-  font-size: 20px;
+.bldesc p{
+  font-size: 18px;
 }
-.bldesc footer {
-  margin-bottom: 1em;
+
+.bldesc ul{
+  font-size: 18px;
+  margin-left: 30px;
+  color: black;
+  line-height: 1.8;
 }
-.bldesc cite {
-  font-style: oblique;
+
+.bldesc h3 {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: #8113e8;
+  font-weight: 500;
 }
+//.bldesc footer {
+//  margin-bottom: 1em;
+//}
+//.bldesc cite {
+//  font-style: oblique;
+//}
 .desc{
   color: black;
   line-height: 1.5;
   font-family: sans-serif;
 }
-.serv{
-  padding-top: 70px;
-}
+
 
 
 .clients-area {
@@ -80,7 +93,16 @@
   color: black;
   padding-left: 30px;
   padding-right: 30px;
-  line-height: 40px;
+  line-height: 35px;
+  text-indent: 50px;
+}
+
+@media (max-width: 480px) {
+
+  .todo1 {
+    padding: 5px;
+  }
+
 }
 
 .clients-comments {
@@ -168,7 +190,6 @@ h3 {
 p {
   font-size: 17px;
   line-height: 22px;
-  color: #929496;
   font-weight: 400;
 }
 
