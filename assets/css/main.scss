@@ -35,7 +35,7 @@
   left: 40px;
   right: 40px;
   line-height: .5;
-  background: linear-gradient(to right, #e8ce0e 100%, transparent 100%, transparent), linear-gradient(to right, transparent, transparent 55%, #e8ce0e 55%);
+  background: linear-gradient(to right, #8113e8 100%, transparent 100%, transparent), linear-gradient(to right, transparent, transparent 55%, #8113e8 55%);
   font-family: serif;
 }
 .bldesc:before {
@@ -60,6 +60,9 @@
   line-height: 1.5;
   font-family: sans-serif;
 }
+.serv{
+  padding-top: 70px;
+}
 
 
 .clients-area {
@@ -75,6 +78,9 @@
 .todo1{
   text-align: justify;
   color: black;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 40px;
 }
 
 .clients-comments {
