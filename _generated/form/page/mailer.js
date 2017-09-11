@@ -22,6 +22,7 @@ var smtpTransport = nodemailer.createTransport({
 
 
 /*------------------SMTP Over-----------------------------*/
+//
 
 /*------------------Routing Started ------------------------*/
 
@@ -30,10 +31,25 @@ app.get('/',function(req,res){
 });
 app.get('/send',function(req,res){
 	var mailOptions={
-		to : 'first@gmail.com, second@yandex.ua, third@mail.com',
-		subject : req.query.subject,
+		to : 'first@mail.com, second@mail.com',
+		subject : 'Сообщение из сайта',
 		text : req.query.text,
-		html: req.query.subject+"<b>Hello  </b>" // html body
+		html:"<span>Имя:  </span>" + req.query.firstName + "<br>" +
+				"<span>Фамилия: </span> " + req.query.secondName + "<br>" +
+					"<span>Телефон: </span>" + req.query.tel + "<br>" +
+					"<span>E-mail: </span>" + req.query.email + "<br>" +
+					"<span>Возраст: </span>" + req.query.age + "<br>" +
+					"<span>Место работы: </span>" + req.query.job + "<br>" +
+					"<span>Состав семьи: </span>" + req.query.family + "<br>" +
+					"<span>Информация о квартире: </span>" + req.query.flat + "<br>" +
+					"<span>Город: </span>" + req.query.city + "<br>" +
+					"<span>Информация о квартире: </span>" + req.query.flatInfo + "<br>" +
+					"<span>Район: </span>" + req.query.district + "<br>" +
+					"<span>Кол-во комнат: </span>" + req.query.rooms + "<br>" +
+					"<span>Срок аренды: </span>" + req.query.lease + "<br>" +
+					"<span>Минимальная цена: </span>" + req.query.minPrice + "<br>" +
+					"<span>Максимальная цена: </span>" + req.query.maxPrice + "<br>" +
+					"<span>Дата заселения: </span>" + req.query.date
 	}
 	console.log(mailOptions);
 	smtpTransport.sendMail(mailOptions, function(error, response){

@@ -1,16 +1,45 @@
-<html>
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Node.JS Email application</title>
+    <meta charset="utf-8"/>
+    <title>Заявка</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/">
+    <script>
+        function agreeForm(f) {
+            // Если поставлен флажок, снимаем блокирование кнопки
+            if (f.agree1.checked && f.agree2.checked && f.agree3.checked) f.submit.disabled = 0
+            // В противном случае вновь блокируем кнопку
+            else f.submit.disabled = 1
+        }
+    </script>
     <script>
         $(document).ready(function(){
-            var from,to,subject,text;
+            var from,to,subject,tel,email;
             $("#send_email").click(function(){
-                to=$("#to").val();
-                subject=$("#subject").val();
-                text=$("#content").val();
-                $("#message").text("Sending E-mail...Please wait");
-                $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+                firstName=$("#firstName").val();
+                secondName=$("#secondName").val();
+                tel=$("#tel").val();
+                email=$("#email").val();
+                age=$("#age").val();
+                job=$("#job").val();
+                family=$("#family").val();
+                flat=$("#flat").val();
+                city=$("#city").val();
+                flatInfo=$("#flatInfo").val();
+                district=$("#district").val();
+                rooms=$("#rooms").val();
+                lease=$("#lease").val();
+                minPrice=$("#minPrice").val();
+                maxPrice=$("#maxPrice").val();
+                date=$("#date").val();
+                $("#message").text("Спасибо, Ваша заявка отправлена.");
+                $.get("http://localhost:3000/send",{firstName:firstName,secondName:secondName,tel:tel,email:email,age:age,job:job,
+                    family:family,flat:flat,city:city,flatInfo:flatInfo,district:district,rooms:rooms,lease:lease,
+                    minPrice:minPrice,maxPrice:maxPrice,date:date},function(data){
                     if(data=="sent")
                     {
                         $("#message").empty().html("<p>Email is been sent at "+to+" . Please check inbox !</p>");
@@ -21,46 +50,154 @@
         });
     </script>
     <style>
-        #container
-        {
-            margin-left:400px;
-            margin-top:50px;
+        body{
+
+            text-align: center;
         }
-        #to,#subject,#content
-        {
-            font-family: "Segoe UI";
-            font-size:18px;
-            width:530px;
+        #help{
+            font-style: italic;
+            color: red;
         }
-        h1
-        {
-            font-family: "Segoe UI";
-            font-size:40px;
-            color: #3b5998;
+
+        .row{
+            position: relative;
         }
-        p
-        {
-            color:green;
+        .col-md-6{
+            margin:auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
         }
-        #send_email
-        {
-            font-size:15px;
-            font-family: "Segoe UI";
-        }
-        #message
-        {
-            font-size:18px;
+
+
+        @media only screen and (max-device-width:480px){
+            form{
+                margin-left: 5px;
+                margin-right: 5px;
+            }
         }
     </style>
 </head>
 <body>
-<div id="container">
-    <h1>Mailer In Node.JS</h1>
-    <input type="text" id="to" placeholder="Enter E-mail ID where you want to send"><br>
-    <input type="text" id="subject" placeholder="Write Subject"><br>
-    <textarea id="content" rows="5" cols="40" placeholder="Write what you want to send"></textarea><br>
-    <button id="send_email">Send Email</button><br>
-    <span id="message"></span>
+<h1>Форма заявки</h1>
+
+<p id="help">
+    Поля, отмеченные * обязательны для заполнения.
+</p>
+<div class="row">
+    <div class="col-md-6">
+        <form>
+
+            <div class="form-group">
+                <label>Имя *</label>
+                <input id="firstName" type="text" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Фамилия *</label>
+                <input id="secondName" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Телефон *</label>
+                <input id="tel" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">E-mail *</label>
+                <input id="email" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Возраст *</label>
+                <input id="age" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Место работы *</label>
+                <input id="job" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Состав семьи *</label>
+                <input id="family" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Информация о квартире *</label>
+                <input id="flat" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Город *</label>
+                <input id="city" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Какая квартира Вас заинтересовала (адрес или ссылка) *</label>
+                <input id="flatInfo" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Интересующий Вас район *</label>
+                <input id="district" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Сколько комнат *</label>
+                <input id="rooms" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Срок аренды *</label>
+                <input id="lease" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Цена от *</label>
+                <input id="minPrice" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Цена до *</label>
+                <input id="maxPrice" type="text" class="form-control"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Дата вселения *</label>
+                <input id="date" type="text" class="form-control"
+                       required>
+            </div>
+
+
+            <label class="checkbox">
+                <input type="checkbox" name="agree1" onclick="agreeForm(this.form)"> С условиями <a href="/form/contract">Договора</a> ознакомлен
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="agree2" onclick="agreeForm(this.form)"> С условиями <a href="/form/agreement">Пользовательского соглашения</a> ознакомлен
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="agree3" onclick="agreeForm(this.form)"> С <a href="/#pricing">Пакетом предоставляемых услуг</a> ознакомлен
+            </label>
+
+            <button class="btn btn-primary" id="send_email" name="submit" disabled>Отправить</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>
+
+

@@ -1,10 +1,155 @@
 
+#partners{
+  //padding-top: 1px;
+  //margin:auto;
+  //position: absolute;
+  //top: 0;
+}
+
+.img-partner{
+  width: 100px;
+  height: 100px;
+}
+#pumb{
+  width: 75px;
+  height: 75px;
+}
+
+.empl{
+  color: whitesmoke;
+}
+.bldesc {
+  margin-left: -10px;
+  /*background: #466ecd;*/
+  padding: 40px;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  //text-align: center;
+}
+.bldesc:before, .bldesc:after {
+  font-size: 25px;
+  //color: #e8ce0e;
+  position: absolute;
+  height: 2px;
+  left: 40px;
+  right: 40px;
+  line-height: .5;
+  background: linear-gradient(to right, #8113e8 100%, transparent 100%, transparent), linear-gradient(to right, transparent, transparent 55%, #8113e8 55%);
+  font-family: serif;
+}
+.bldesc:before {
+  content: "";
+  top: 30px;
+}
+.bldesc:after {
+  content: "";
+  bottom: 30px;
+}
+.bldesc p{
+  font-size: 18px;
+}
+
+.bldesc ul{
+  font-size: 18px;
+  margin-left: 30px;
+  color: black;
+  line-height: 1.8;
+}
+
+.bldesc h3 {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: #8113e8;
+  font-weight: 500;
+}
+//.bldesc footer {
+//  margin-bottom: 1em;
+//}
+//.bldesc cite {
+//  font-style: oblique;
+//}
+.desc{
+  color: black;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+
+
+.clients-area {
+  padding: 60px;
+}
+#ww{
+  color: black;
+}
+.todo{
+  text-align: justify;
+}
+
+.todo1{
+  text-align: justify;
+  color: black;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 35px;
+  text-indent: 50px;
+}
+
+@media (max-width: 480px) {
+
+  .todo1 {
+    padding: 5px;
+  }
+
+}
+
+.clients-comments {
+  /*background-image: url("../images/image_bg.png");*/
+  background-position: center 118px;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
+.clients-comments img {
+  background:#DDDDDD;
+  border: 1px solid #DDDDDD;
+  height: 182px;
+  padding: 3px;
+  width: 182px;
+  transition: all 0.9s ease 0s;
+  -moz-transition: all 0.9s ease 0s;
+  -webkit-transition: all 0.9s ease 0s;
+  -o-transition: all 0.9s ease 0s;
+}
+
+.clients-comments h3 {
+  margin-top: 55px;
+  font-weight: 300;
+  padding: 0 40px;
+}
+
+.clients-comments h4 {
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+
+.clients-comments  h4  span {
+  font-weight: 700;
+  font-style: oblique;
+}
 
 /* ==========================================================================
    Global styles
    ========================================================================== */
 h1, h2, h3, h4, h5, h6, p, .btn, .navbar-nav a, .form-control, .list-inline, small, #pricing {
   font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  overflow-x: hidden;
 }
 
 p, .lead {
@@ -45,7 +190,6 @@ h3 {
 p {
   font-size: 17px;
   line-height: 22px;
-  color: #929496;
   font-weight: 400;
 }
 
@@ -358,6 +502,8 @@ header {
 
 .pad-sm {
   padding: 80px 0px;
+  //position: relative;
+  //text-align: center;
 }
 
 .pad-xs {
@@ -529,7 +675,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 15px;
   color: #929496;
   background: #ffffff;
 }
