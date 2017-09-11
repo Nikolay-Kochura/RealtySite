@@ -13,8 +13,8 @@ var smtpTransport = nodemailer.createTransport({
 	host: 'smtp.gmail.com',
 	port: 587,
 	auth: {
-		user: 'nikolaykochura92@gmail.com', // your e-mail
-		pass: 'nikolay92'			// password of your e-mail
+		user: 'your@gmail.com', // your e-mail
+		pass: '****'			// password of your e-mail
 	},
 	tls: {rejectUnauthorized: false},
 	debug:true
@@ -31,7 +31,7 @@ app.get('/',function(req,res){
 });
 app.get('/send',function(req,res){
 	var mailOptions={
-		to : 'nikolaykochura92@gmail.com, third@mail.com',
+		to : 'first@mail.com, second@mail.com',
 		subject : 'Сообщение из сайта',
 		text : req.query.text,
 		html:"<span>Имя:  </span>" + req.query.firstName + "<br>" +
